@@ -26,7 +26,7 @@ A small end-to-end DevOps project. A Python script reports the weather for **any
 
 ## Architecture
 
-![Architecture diagram](architecture.png)
+![Architecture diagram](screenshots/architecture.png)
 
 *The person pushes code to GitHub (SCM). A Jenkins build, started with the `CITY` and `REGION` parameters, checks the code out on the `automation` VM, runs `weather_report.py` (which calls the Open-Meteo weather API) and then the Ansible playbook, which copies `Final.report.CSV` to `/tmp` on `qaserver`. The repository is cloned into the 10G `/weather_report` filesystem on `qaserver`. Splunk (also on `automation`) produces `Final.report.CSV`, which is committed to GitHub. Jenkins shows the results in its console output.*
 
