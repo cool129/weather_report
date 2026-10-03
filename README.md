@@ -20,7 +20,6 @@ A small end-to-end DevOps project. A Python script reports the weather for **any
 7. [Question 4: Incident response plan](#question-4-incident-response-plan)
 8. [Problems I faced and how I fixed them](#problems-i-faced-and-how-i-fixed-them)
 9. [Final result](#final-result)
-10. [Screenshot checklist](#screenshot-checklist)
 
 ---
 
