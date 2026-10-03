@@ -200,11 +200,11 @@ python3 weather_report.py "$CITY" "$REGION"
 ansible-playbook -i /etc/ansible/hosts copy_report.yml
 ```
 
-![Jenkins Source Code Management: Git repository and branch](13a-jenkins-scm-config.png)
+![Jenkins Source Code Management: Git repository and branch](screenshots/13a-jenkins-scm-config.png)
 
 <!-- add later: ![Jenkins parameters and Execute shell build step](screenshots/13b-jenkins-parameters-and-build-step.png) -->
 
-![Jenkins Build with Parameters form](15-jenkins-build-with-parameters-form.png)
+![Jenkins Build with Parameters form](screenshots/15-jenkins-build-with-parameters-form.png)
 
 Jenkins runs as the `jenkins` user, so that user was given SSH access to `qaserver`:
 
@@ -341,7 +341,7 @@ A 3-slide presentation (`Incident_Response_Plan.pptx`) for this scenario: a Fina
 
 ![A copy of the repo in the home folder (prompt shows ~/weather_report), not in /weather_report](t8-clone-in-home-folder.png)
 
-![After the fix, the Jenkins job menu shows Build with Parameters](14-jenkins-job-page.png)
+![After the fix, the Jenkins job menu shows Build with Parameters](screenshots/14-jenkins-job-page.png)
 
 ---
 
