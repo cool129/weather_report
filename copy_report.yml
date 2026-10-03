@@ -3,9 +3,9 @@
   hosts: qaserver
   gather_facts: no
 
-  tasks:
+    tasks:
     - name: Copy Final.report.CSV to /tmp
-      ansible.builtin.copy:
+      copy:
         src: Final.report.CSV
         dest: /tmp/Final.report.CSV
         mode: '0644'
