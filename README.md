@@ -102,7 +102,7 @@ grep -c weather_report /etc/fstab        # must print 1 (no duplicate)
 sudo umount /weather_report && sudo mount -a && df -h /weather_report
 ```
 
-<!-- add later: ![fstab entry and remount test](03-fstab-entry.png) -->
+<!-- add later: ![fstab entry and remount test](screenshots/03-fstab-entry.png) -->
 
 ### 2.4 Create the GitHub repository and clone it into the filesystem
 
@@ -115,9 +115,9 @@ git clone https://github.com/cool129/weather_report.git
 ls -l weather_report
 ```
 
-<!-- add later: ![GitHub repository page with the project files](05-github-repo-files.png) -->
+<!-- add later: ![GitHub repository page with the project files](screenshots/05-github-repo-files.png) -->
 
-<!-- add later: ![git clone inside /weather_report on qaserver](04-git-clone-weather-report.png) -->
+<!-- add later: ![git clone inside /weather_report on qaserver](screenshots/04-git-clone-weather-report.png) -->
 
 ---
 
@@ -131,7 +131,7 @@ ls -l weather_report
 
 2. Ingested the provided dataset into that index (**Settings, then Add Data, then Upload**).
 
-   <!-- add later: ![Splunk data upload](07-splunk-data-upload.png) -->
+   <!-- add later: ![Splunk data upload](screenshots/07-splunk-data-upload.png) -->
 
 3. Ran the required search:
 
@@ -143,7 +143,7 @@ ls -l weather_report
 
 4. Exported the results as CSV and named the file exactly `Final.report.CSV`. The export has **1,783 events**, all from `index=weather_index_report` with sourcetype `weather_data`.
 
-   <!-- add later: ![Splunk export](09-splunk-export-csv.png) -->
+   <!-- add later: ![Splunk export](screenshots/09-splunk-export-csv.png) -->
 
 5. Committed `Final.report.CSV` to GitHub.
 
@@ -161,7 +161,7 @@ Connectivity check:
 ansible qaserver -i /etc/ansible/hosts -m ping
 ```
 
-<!-- add later: ![ansible ping returns pong](10-ansible-ping-pong.png) -->
+<!-- add later: ![ansible ping returns pong](screenshots/10-ansible-ping-pong.png) -->
 
 Playbook `copy_report.yml`:
 
