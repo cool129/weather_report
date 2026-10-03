@@ -91,7 +91,7 @@ df -h /weather_report
 
 Result: `/dev/sdc` shows about 9.8G (the 10G disk, minus ext4 overhead) mounted on `/weather_report`.
 
-![df showing /dev/sdc mounted on /weather_report](02-df-weather-report-mounted.png)
+![df showing /dev/sdc mounted on /weather_report](screenshots/02-df-weather-report-mounted.png)
 
 ### 2.3 Make the mount permanent
 
@@ -127,7 +127,7 @@ ls -l weather_report
 
 1. Created the index `weather_index_report` (**Settings, then Indexes, then New Index**).
 
-   ![Splunk index created](06-splunk-index-created.png)
+   ![Splunk index created](screenshots/06-splunk-index-created.png)
 
 2. Ingested the provided dataset into that index (**Settings, then Add Data, then Upload**).
 
@@ -139,7 +139,7 @@ ls -l weather_report
    index = weather_index_report
    ```
 
-   ![Splunk search results](08-splunk-search-results.png)
+   ![Splunk search results](screenshots/08-splunk-search-results.png)
 
 4. Exported the results as CSV and named the file exactly `Final.report.CSV`. The export has **1,783 events**, all from `index=weather_index_report` with sourcetype `weather_data`.
 
@@ -185,7 +185,7 @@ Manual test run from `automation`:
 ansible-playbook -i /etc/ansible/hosts copy_report.yml
 ```
 
-<!-- add later: ![Manual ansible-playbook run, failed=0](11-ansible-playbook-run.png) -->
+<!-- add later: ![Manual ansible-playbook run, failed=0](screenshots/11-ansible-playbook-run.png) -->
 
 ### 3.3 Jenkins job
 
@@ -202,7 +202,7 @@ ansible-playbook -i /etc/ansible/hosts copy_report.yml
 
 ![Jenkins Source Code Management: Git repository and branch](13a-jenkins-scm-config.png)
 
-<!-- add later: ![Jenkins parameters and Execute shell build step](13b-jenkins-parameters-and-build-step.png) -->
+<!-- add later: ![Jenkins parameters and Execute shell build step](screenshots/13b-jenkins-parameters-and-build-step.png) -->
 
 ![Jenkins Build with Parameters form](15-jenkins-build-with-parameters-form.png)
 
@@ -224,15 +224,15 @@ sudo -u jenkins ssh geo2face@192.168.1.147 hostname     # prints: qaserver
    ls -l /tmp/Final.report.CSV      # No such file or directory
    ```
 
-   <!-- add later: ![File missing before the Jenkins build](12-tmp-file-before-delete.png) -->
+   <!-- add later: ![File missing before the Jenkins build](screenshots/12-tmp-file-before-delete.png) -->
 
 2. Ran the Jenkins job. The console shows the weather report, then `ok=1 changed=1 failed=0` and `Finished: SUCCESS`.
 
    ![Jenkins console output: checkout, weather report for Arlington, then the playbook starts](16a-jenkins-console-weather-output.png)
 
-<!-- add later: ![Jenkins console, success, default city](16-jenkins-console-success.png) -->
+<!-- add later: ![Jenkins console, success, default city](screenshots/16-jenkins-console-success.png) -->
 
-   <!-- add later: ![Jenkins console, another country](17-jenkins-console-other-country.png) -->
+   <!-- add later: ![Jenkins console, another country](screenshots/17-jenkins-console-other-country.png) -->
 
 3. Checked on `qaserver`:
 
@@ -240,9 +240,9 @@ sudo -u jenkins ssh geo2face@192.168.1.147 hostname     # prints: qaserver
    ls -l /tmp/Final.report.CSV      # 717764 bytes
    ```
 
-   <!-- add later: ![File present in /tmp on qaserver](18-qaserver-tmp-file.png) -->
+   <!-- add later: ![File present in /tmp on qaserver](screenshots/18-qaserver-tmp-file.png) -->
 
-![Jenkins build history, all builds stable](20-jenkins-build-history.png)
+![Jenkins build history, all builds stable](screenshots/20-jenkins-build-history.png)
 
 ---
 
@@ -292,7 +292,7 @@ A 3-slide presentation (`Incident_Response_Plan.pptx`) for this scenario: a Fina
 | 2. Response | **Containment** (isolate the workstation, block the unexpected IPs and ports, restrict the Automation and prod servers, reset credentials), **Eradication** (quarantine the attachment, remove the email, scan the systems, scope the modified files) and **Recovery** (rebuild the workstation, restore clean files, verify servers, keep enhanced monitoring) |
 | 3. Communication and prevention | Escalation and notification, confirming the invoice with the real supplier, a post-incident review, phishing awareness training and email attachment filtering |
 
-<!-- add later: ![Incident response slides](19-ir-deck-slides.png) -->
+<!-- add later: ![Incident response slides](screenshots/19-ir-deck-slides.png) -->
 
 ---
 
@@ -325,19 +325,19 @@ A 3-slide presentation (`Incident_Response_Plan.pptx`) for this scenario: a Fina
 
 ### Screenshots of the main problems
 
-<!-- add later: ![10.45 MB disk in VirtualBox](t1-virtualbox-10-45-mb-disk.png) -->
+<!-- add later: ![10.45 MB disk in VirtualBox](screenshots/t1-virtualbox-10-45-mb-disk.png) -->
 
-<!-- add later: ![df showing the root disk instead of the 10G disk](t2-df-root-disk-not-mounted.png) -->
+<!-- add later: ![df showing the root disk instead of the 10G disk](screenshots/t2-df-root-disk-not-mounted.png) -->
 
-<!-- add later: ![ansible: No route to host](t3-ansible-no-route-to-host.png) -->
+<!-- add later: ![ansible: No route to host](screenshots/t3-ansible-no-route-to-host.png) -->
 
-<!-- add later: ![ansible: no action detected in task](t4-no-action-detected.png) -->
+<!-- add later: ![ansible: no action detected in task](screenshots/t4-no-action-detected.png) -->
 
-<!-- add later: ![Jenkins: Permission denied (publickey)](t5-jenkins-permission-denied.png) -->
+<!-- add later: ![Jenkins: Permission denied (publickey)](screenshots/t5-jenkins-permission-denied.png) -->
 
-<!-- add later: ![Weather script failure with 'results'](t6-results-error.png) -->
+<!-- add later: ![Weather script failure with 'results'](screenshots/t6-results-error.png) -->
 
-<!-- add later: ![Google temperature vs script temperature](t7-google-vs-script-temperature.png) -->
+<!-- add later: ![Google temperature vs script temperature](screenshots/t7-google-vs-script-temperature.png) -->
 
 ![A copy of the repo in the home folder (prompt shows ~/weather_report), not in /weather_report](t8-clone-in-home-folder.png)
 
