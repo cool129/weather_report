@@ -3,7 +3,7 @@ import json
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 args = [a.strip() for a in sys.argv[1:] if a.strip()] or ["Arlington", "Texas"]
 city, region = args[0], " ".join(args[1:]).lower()
@@ -32,7 +32,8 @@ try:
     print("-" * 32)
     where = [place["name"], place.get("admin1"), place["country"]]
     print("Weather for", ", ".join(filter(None, where)))
-    print("Time:", current["time"].replace("T", " "), "(local time)")
+    local = datetime.now(timezone.utc) + timedelta(seconds=data["utc_offset_seconds"])
+    print("Time:", local.strftime("%Y-%m-%d %H:%M"), "(local time)")
     print("Temperature:", current["temperature_2m"], units["temperature_2m"])
     print("Humidity:", current["relative_humidity_2m"], units["relative_humidity_2m"])
     print("Wind Speed:", current["wind_speed_10m"], units["wind_speed_10m"].replace("mp/h", "mph"))
