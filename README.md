@@ -228,7 +228,7 @@ sudo -u jenkins ssh geo2face@192.168.1.147 hostname     # prints: qaserver
 
 2. Ran the Jenkins job. The console shows the weather report, then `ok=1 changed=1 failed=0` and `Finished: SUCCESS`.
 
-   ![Jenkins console output: checkout, weather report for Arlington, then the playbook starts](16a-jenkins-console-weather-output.png)
+   ![Jenkins console output: checkout, weather report for Arlington, then the playbook starts](screenshots/16a-jenkins-console-weather-output.png)
 
 <!-- add later: ![Jenkins console, success, default city](screenshots/16-jenkins-console-success.png) -->
 
