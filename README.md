@@ -338,7 +338,7 @@ A 3-slide presentation (`Incident_Response_Plan.pptx`) for this scenario: a Fina
 
 <!-- add later: ![Google temperature vs script temperature](screenshots/t7-google-vs-script-temperature.png) -->
 
-![A copy of the repo in the home folder (prompt shows ~/weather_report), not in /weather_report](t8-clone-in-home-folder.png)
+![A copy of the repo in the home folder (prompt shows ~/weather_report), not in /weather_report](screenshots/t8-clone-in-home-folder.png)
 
 ![After the fix, the Jenkins job menu shows Build with Parameters](screenshots/14-jenkins-job-page.png)
 
