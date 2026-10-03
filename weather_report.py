@@ -33,7 +33,7 @@ try:
     where = [place["name"], place.get("admin1"), place["country"]]
     print("Weather for", ", ".join(filter(None, where)))
     local = datetime.now(timezone.utc) + timedelta(seconds=data["utc_offset_seconds"])
-    print("Time:", local.strftime("%Y-%m-%d %H:%M"), "(local time)")
+    print("Time:", local.strftime("%Y-%m-%d %H:%M"))
     print("Temperature:", current["temperature_2m"], units["temperature_2m"])
     print("Humidity:", current["relative_humidity_2m"], units["relative_humidity_2m"])
     print("Wind Speed:", current["wind_speed_10m"], units["wind_speed_10m"].replace("mp/h", "mph"))
