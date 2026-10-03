@@ -1,4 +1,4 @@
-fix it for me # Weather Report CI/CD Pipeline (Capstone Project)
+# Weather Report  (Capstone Project)
 
 A small end-to-end DevOps project. A Python script reports the weather for **any city in the world**. The code lives in GitHub, **Jenkins** runs it on demand, **Ansible** delivers a **Splunk-generated report** to a QA server, and a dedicated **10G filesystem** hosts the cloned repository.
 
