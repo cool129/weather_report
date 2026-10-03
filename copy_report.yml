@@ -1,10 +1,10 @@
 ---
-- name: Copy Final Report to QA Server
+- name: Deliver weather report CSV to qaserver
   hosts: qaserver
   gather_facts: no
 
-    tasks:
-    - name: Copy Final.report.CSV to /tmp
+  tasks:
+    - name: Copy Final.report.CSV into /tmp
       copy:
         src: Final.report.CSV
         dest: /tmp/Final.report.CSV
