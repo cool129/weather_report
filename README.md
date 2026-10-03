@@ -76,7 +76,7 @@ Requirements: host the weather monitoring software on a virtual server, keep the
 
 A 10G virtual disk was attached to `qaserver`. `lsblk` shows it as `sdc` with no mount point.
 
-![lsblk showing the 10G sdc disk](01-lsblk-disks.png)
+![lsblk showing the 10G sdc disk](screenshots/01-lsblk-disks.png)
 
 ### 2.2 Format and mount at `/weather_report`
 
